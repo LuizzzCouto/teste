@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MensagensProvider } from '../../providers/mensagens/mensagens';
 import { Mensagem } from '../../models/mensagem';
-import { CadastroMensagensPage } from '../cadastro-mensagens/cadastro-mensagens';
-import { CadastroMensagens2Page } from '../cadastro-mensagens2/cadastro-mensagens2';
 
 /**
  * Generated class for the ListaMensagensPage page.
@@ -27,15 +25,6 @@ export class ListaMensagens2Page {
     private provedor: MensagensProvider
     ) {
     this.lista = this.provedor.listar();
-  }
-
-  adicionar() {
-    console.log("deveria chamar a tela de cadastro");
-    this.navCtrl.push(CadastroMensagens2Page);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaMensagens2Page');
-  }
+  };
 
 }
