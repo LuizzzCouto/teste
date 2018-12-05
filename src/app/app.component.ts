@@ -6,6 +6,7 @@ import { HomePage } from '../pages/home/home';
 import { ListaMensagens2Page } from '../pages/lista-mensagens2/lista-mensagens2';
 import { ListaVisitantePage } from '../pages/lista-visitante/lista-visitante';
 import { NoticiaVisitantePage } from '../pages/noticia-visitante/noticia-visitante';
+import { FeedNoticiasPage } from '../pages/feed-noticias/feed-noticias';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,6 +27,7 @@ export class MyApp {
       { title: 'Notícias', component: NoticiaVisitantePage },
       { title: 'Listar Mensagens 2', component: ListaMensagens2Page},
       { title: 'Visitantes', component: ListaVisitantePage },
+      { title: 'Feed Teste', component: FeedNoticiasPage },
     ];
 
   }

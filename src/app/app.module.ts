@@ -15,6 +15,7 @@ import { ListaVisitantePage } from '../pages/lista-visitante/lista-visitante';
 import { AngularFireModule } from '@angular/fire';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireStorageModule } from '@angular/fire/storage/storage.module';
+import { FeedNoticiasPage } from '../pages/feed-noticias/feed-noticias';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage/storage.module';
     ListaMensagens2Page,
     ListaVisitantePage,
     NoticiaVisitantePage,
+    FeedNoticiasPage,
   ],
   imports: [ 
     BrowserModule,
@@ -38,6 +40,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage/storage.module';
     ListaMensagens2Page,
     ListaVisitantePage,
     NoticiaVisitantePage,
+    FeedNoticiasPage,
   ],
   providers: [
     StatusBar,
