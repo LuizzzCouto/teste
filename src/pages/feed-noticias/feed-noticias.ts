@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FeedNoticiasProvider } from '../../providers/feed-noticias/feed-noticias';
+import { NoticiasProvider } from '../../providers/noticias/noticias-visitante';
 
 /**
  * Generated class for the FeedNoticiasPage page.
@@ -15,11 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedNoticiasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+
+  private lista;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private provedor: FeedNoticiasProvider
+    ) {
+      this.provedor.listar().then( 
+        data => {
+          this.lista = data;
+        }
+      )
+      ;
+    }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedNoticiasPage');
+    console.log('ionViewDidLoad ListaUsuarioPage');
   }
-
 }
