@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FeedNoticiasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FeedNoticiasProvider } from '../../providers/feed-noticias/feed-noticias';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedNoticiasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private lista: any = [];
+
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     private provedor: FeedNoticiasProvider){
+       this.provedor.listar().then(
+         conteudo => {
+           this.lista = conteudo;
+         }
+       );
   }
+
+  ionViewDidEnter(){
+    this.provedor.listar().then(
+      conteudo => {
+        this.lista = conteudo;
+      }
+    );
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedNoticiasPage');
+    
   }
 
 }

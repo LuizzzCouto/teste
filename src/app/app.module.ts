@@ -10,12 +10,12 @@ import { MensagensProvider } from '../providers/mensagens/mensagens';
 import { ListaMensagens2Page } from '../pages/lista-mensagens2/lista-mensagens2';
 import { VisitanteProvider } from '../providers/visitante/visitante';
 import { NoticiaVisitantePage } from '../pages/noticia-visitante/noticia-visitante';
-import { NoticiasProvider } from '../providers/noticias/noticias-visitante';
 import { ListaVisitantePage } from '../pages/lista-visitante/lista-visitante';
 import { AngularFireModule } from '@angular/fire';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireStorageModule } from '@angular/fire/storage/storage.module';
 import { FeedNoticiasPage } from '../pages/feed-noticias/feed-noticias';
+import { FeedNoticiasProvider } from '../providers/feed-noticias/feed-noticias';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { FeedNoticiasPage } from '../pages/feed-noticias/feed-noticias';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MensagensProvider,
     VisitanteProvider,
-    NoticiasProvider,
+    FeedNoticiasProvider,
   ]
 })
 export class AppModule {}
