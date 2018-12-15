@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the NoticiaVisitantePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FeedNoticiasProvider } from '../../providers/feed-noticias/feed-noticias';
 
 @IonicPage()
 @Component({
@@ -14,9 +8,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'noticia-visitante.html',
 })
 export class NoticiaVisitantePage {
+  
+  private lista: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private provedor: FeedNoticiasProvider){
+      this.provedor.listar().then(
+        noticias => {
+          this.lista = noticias;
+        }
+      );
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NoticiaVisitantePage');

@@ -11,16 +11,15 @@
 
 <ion-content padding>
 <ion-card>
-  <ion-item>
+    <ion-item *ngFor="let Noticia of lista">
     <ion-avatar item-start>
       <img src="https://scontent.fcfc2-1.fna.fbcdn.net/v/t1.0-9/1003567_1375617869356903_1130333485_n.jpg?_nc_cat=108&_nc_ht=scontent.fcfc2-1.fna&oh=8aef778b8f0fde36a0dd7bd28300f636&oe=5C6791B8">
     </ion-avatar>
-    <h2>CAPS Caçador</h2>
-    <p>Dezembro, 2018</p>
-  </ion-item>
-  <img src="https://scontent.fcfc2-1.fna.fbcdn.net/v/t1.0-9/1456733_1375634892688534_1451267776_n.jpg?_nc_cat=102&_nc_ht=scontent.fcfc2-1.fna&oh=6f0cf547edc269d1d517714c62827316&oe=5CA88727">
+    <h1>{{Noticia.titulo}}</h1>
+    <p>{{Noticia.data}}</p>
+  <img src="{{Noticia.imagem}}">
   <ion-card-content>
-    <p>Equipe CAPS Caçador, venha nos conhecer </p>
+    <p>{{Noticia.corpo}}</p>
   </ion-card-content>
   <ion-row>
     <ion-col>
@@ -37,9 +36,10 @@
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-        5h atrás
+          teste
       </ion-note>
     </ion-col>
   </ion-row>
+</ion-item>
 </ion-card>
 </ion-content>
