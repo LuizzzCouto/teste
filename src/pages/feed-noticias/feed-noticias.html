@@ -8,19 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-   <ion-list>
-    <ion-list-header>
-      Feed
-      <button ion-button icon-only item-end clear>
-        <ion-icon name="ios-paper"></ion-icon>
-      </button>
-    </ion-list-header>
-    <ion-item *ngFor="let Noticia of lista">
-      <ion-label>
-        <h2>{{Noticia.idnoticia}}</h2>
-        <h3>{{Noticia.corpo}}</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  
+  <ion-list>
+   <ion-item *ngFor="let Noticia of lista">
+        <ion-thumbnail item-start>
+            <img src="{{Noticia.imagem}}">
+        </ion-thumbnail>
+       <h1>{{Noticia.titulo}}</h1>
+       <p>{{Noticia.corpo}}</p>
+   </ion-item>
+ </ion-list>
 </ion-content>
