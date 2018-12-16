@@ -14,7 +14,7 @@ import { FeedNoticiasPage } from '../pages/feed-noticias/feed-noticias';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = FeedNoticiasPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -23,11 +23,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Notícias', component: NoticiaVisitantePage },
-      { title: 'Listar Mensagens 2', component: ListaMensagens2Page},
-      { title: 'Visitantes', component: ListaVisitantePage },
-      { title: 'Feed Teste', component: FeedNoticiasPage },
+      { title: 'Home', component: FeedNoticiasPage },
+    
     ];
 
   }

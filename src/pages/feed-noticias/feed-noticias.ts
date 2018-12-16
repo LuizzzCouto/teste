@@ -10,6 +10,7 @@ import { FeedNoticiasProvider } from '../../providers/feed-noticias/feed-noticia
 export class FeedNoticiasPage {
 
   private lista: any = [];
+  private noticias;
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -19,8 +20,8 @@ export class FeedNoticiasPage {
            this.lista = conteudo;
          }
        );
+ 
   }
-
   ionViewDidEnter(){
     this.provedor.listar().then(
       conteudo => {
@@ -29,6 +30,13 @@ export class FeedNoticiasPage {
     );
   }
 
+  listarNoticia(){
+    this.provedor.listar().then(
+      conteudo => {
+        this.lista = conteudo;
+      }
+    );
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedNoticiasPage');
