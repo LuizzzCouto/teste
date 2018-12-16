@@ -10,15 +10,11 @@
 <ion-content padding>
   <ion-title text-center> Notícias  </ion-title>
   <ion-list>
-   <ion-item *ngFor="let Noticia of lista" (click)= "listarNoticia(feed-noticas)">
+   <ion-item *ngFor="let Noticia of lista">
         <ion-thumbnail item-start>
             <img src="{{Noticia.imagem}}">
         </ion-thumbnail>
-<<<<<<< HEAD
         <h1>{{Noticia.titulo}}</h1>
-=======
-       <a href="../noticia-visitante/noticia-visitante.html"><h1>{{Noticia.titulo}}</h1></a>
->>>>>>> e354afbcab3bca33ee018d674d0e872d0fc8e152
        <p>{{Noticia.corpo}}</p>
    </ion-item>
  </ion-list>
