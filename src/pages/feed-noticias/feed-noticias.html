@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-title text-center> Notícias  </ion-title>
   <ion-list>
-   <ion-item *ngFor="let Noticia of lista">
+   <ion-item *ngFor="let Noticia of lista" (click)= "buscarCard(cardnoticia)">
         <ion-thumbnail item-start>
             <img src="{{Noticia.imagem}}">
         </ion-thumbnail>

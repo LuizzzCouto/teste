@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FeedNoticiasProvider } from '../../providers/feed-noticias/feed-noticias';
+import { NoticiaVisitantePage } from '../noticia-visitante/noticia-visitante';
 
 @IonicPage()
 @Component({
@@ -11,6 +12,8 @@ export class FeedNoticiasPage {
 
   private lista: any = [];
   private noticias;
+  cardnoticia:any;
+  buscarcards:any;
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -20,17 +23,13 @@ export class FeedNoticiasPage {
            this.lista = conteudo;
          }
        );
- 
-  }
-  ionViewDidEnter(){
-    this.provedor.listar().then(
-      conteudo => {
-        this.lista = conteudo;
-      }
-    );
   }
 
-  listarNoticia(){
+  buscarCard (cardnoticia){
+    this.navCtrl.push(NoticiaVisitantePage);
+  }
+
+  ionViewDidEnter(){
     this.provedor.listar().then(
       conteudo => {
         this.lista = conteudo;
